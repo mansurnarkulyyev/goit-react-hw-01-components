@@ -5,12 +5,12 @@ import st from 'components/FriendList/FriendList.module.css';
 export const FriendList = ({ friends }) => {
   return (
     <ul className={st.container}>
-      {friends.map(({ id, avatar, name, isOnline }) => (
+      {friends.map((el) => (
         <FriendListItem
-          key={id}
-          avatar={avatar}
-          name={name}
-          isOnline={isOnline}
+          key={el.id}
+          avatar={el.avatar}
+          name={el.name}
+          isOnline={el.isOnline}
         />
       ))}
     </ul>
@@ -21,6 +21,9 @@ FriendList.propTypes = {
   friends: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
+      avatar:PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      isOnline:PropTypes.bool.isRequired,
     })
   ),
 };

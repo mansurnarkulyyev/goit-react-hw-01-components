@@ -9,16 +9,16 @@ export const Statistics = ({ title, stats }) => {
         {title && <h2 className={st.title}>{title}</h2>}
 
         <ul className={st.statList}>
-          {stats.map(({ id, label, percentage }) => (
+          {stats.map((el) => (
             <li
               className={st.item}
-              key={id}
+              key={el.id}
               style={{
                 backgroundColor: getRandomHexColor(),
               }}
             >
-              <span className={st.label}>{label}</span>
-              <span className={st.percentage}>{percentage}%</span>
+              <span className={st.label}>{el.label}</span>
+              <span className={st.percentage}>{el.percentage}%</span>
             </li>
           ))}
         </ul>
