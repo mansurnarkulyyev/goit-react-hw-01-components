@@ -2,7 +2,8 @@ import PropTypes from 'prop-types';
 
 import st from 'components/TransactionHistory/TransactionHistory.module.css';
 
-export const TransactionHistory = ({ items }) => {
+const TransactionHistory = ({ items }) => {
+
   return (
     <table className={st.transactionHistory}>
       <thead>
@@ -25,6 +26,11 @@ export const TransactionHistory = ({ items }) => {
   );
 };
 
+TransactionHistory.defaultProps = {
+  items:[],
+}
+
+
 TransactionHistory.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.shape({
@@ -35,3 +41,5 @@ TransactionHistory.propTypes = {
     })
   ),
 };
+
+export default TransactionHistory;
